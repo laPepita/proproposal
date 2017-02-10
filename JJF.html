@@ -1,0 +1,426 @@
+<!-- Remove the global.css -->
+<script>
+document.styleSheets[0].disabled = true;
+document.styleSheets[1].disabled = true;
+</script>
+<!-- Add in the style to remove the template boundaries -->
+<style type="text/css">
+    /***********GENERAL Page CSS make over**********/
+    #homeLink img {
+    display: none;
+    }
+    #bgWrapper{
+    width: 100%;
+    }
+    html{
+    min-width: 320px;
+    }
+    div#footer {
+    display: none;
+    }
+</style>
+<!--  ===================  -->
+<!-- Drop in the rest of the code here -->
+<!--  ===================  -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<link rel="stylesheet" href="https://campaigns.australiansuper.com/wp-content/themes/asu_whatmatters/bundle/itmatters.css" />
+<style type="text/css">
+    /*********************************************************************************************************   Custom general CSS ************************************/
+
+    #sectionLearnMore {
+    color: #414141;
+    }
+    /* Custom Horizontal Rule */
+    hr.small {
+    max-width: 100px;
+    }
+    section {
+    padding: 5%;
+    }
+
+    /* Footer */
+    footer {
+    padding: 50px 5px;
+    background: #626c72;
+    color: lightgrey;
+    }
+    footer a{
+    text-decoration: none;
+    color: lightgrey;
+    }
+    #to-top {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    }
+    #global-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background: white;
+    padding: 1.5em;
+    box-sizing: border-box;
+    z-index: 3;
+    transition: .3s;
+    max-width: none;
+    }
+    .portfolio li {
+    font-size: medium;
+    text-align: left;
+    }
+    .container p {
+    font-size: medium;
+    }
+    .vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+
+
+<style type="text/css">
+    /*********Mobile CSS***********/
+    #homeLink img {
+    display: none;
+    }
+    section#about {
+    background: #ff9500;
+    margin-top: 40px;
+    }
+    img#mobLogo {
+    margin-top: -10px;
+    padding-left: 10px;
+    }
+    .mobHid {
+    display: none;
+    }
+    .arrows {
+    list-style:none;
+    }
+    .arrows li:before {
+    content:url('~/media/62FFA8A5C91F41F782E15DFDE4FCA289.ashx');
+    padding-right: 15px;
+    }
+    h1, h2, h3, h4, h5, h6, p, li, span {
+    font-family: Gotham,Helvetica Neue,Arial,sans-serif;
+    }
+    .grey {
+    background: #e3e3e3;
+    color:#000;
+    }
+    section h2, h3, h4 {
+    color:#76797d;
+    }
+    #stared {
+    max-width: 90%;
+    font-size: 0.7em;
+    }
+    /**********************Tablet styling*********************************/
+    @media screen and (min-width: 667px) and (max-width: 1080px){
+    img#mobLogo {
+    margin-left: 25%;
+    }
+    .about {
+    text-align: center;
+    }
+    .mobHid {
+    display: none;
+    }
+    #stared {
+    font-size: small;
+    }
+    }
+    /**Desktop sytling********************************/
+    @media screen and (min-width: 1080px) {
+    img#mobLogo {
+    margin-left: 25%;
+    }
+    .about {
+    text-align: left;
+    }
+    #stared {
+    font-size: medium;
+    }
+    }
+</style>
+<!-- ```````````````THE HTML``````````````` -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- mob banner -->
+<div id="global-header" class="container">
+<div class="row">
+<div class="col-lg-12 text-left">
+<a id="mobHomeLink" href="/"><img style="
+    height: 48px;
+    padding-bottom: 0;
+    margin-bottom: -12px;
+" id="mobLogo" alt="AustralianSuper" src="https://www.techvalidate.com/system/logos/392/asset_thumb/Deloitte_logo.png" /></a>
+</div>
+</div>
+</div>
+<!-- ORANGE SECTION -->
+<section id="about" class="about">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<h2 style="color: white;">Combining your strong quant skills with qualitative research 
+<span style="font-weight: normal; display: block; color: white;"> Understanding the full picture of members across various lifecycle events</span>
+</h2>
+</div>
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container -->
+</section>
+<!-- ############### Section end ############### -->
+
+
+
+
+<!-- Section number 1 -->
+<section class="portfolio">
+<div class="container">
+<div class="row">
+<div class="col-md-8 text-center col-md-offset-2">
+<!-- /.row (nested) -->
+<h2>What</h2>
+<p>The current state and the challenges</p>
+</div>
+</div>
+<!-- /.row -->
+<div class="row">
+<div class="col-md-5 text-center">
+<h3>Where they go</h3>
+<h4>Full widthdrawl rollouts Nov 2015- Nov 2016 </h4>
+<br/>
+<canvas id="myChart2" width="200" height="200"></canvas>
+
+<script>
+var ctx = document.getElementById("myChart2");
+var myChart = new Chart(ctx, {
+       type: 'doughnut',
+    data: {
+    labels: [
+        "Retail Superfunds",
+        "Industry Superfunds",
+        "Public Superfunds",
+          'SMSF',
+          'Other'
+		
+    ],
+    datasets: [
+        {
+            data: [45, 34, 11, 5, 5],
+            backgroundColor: [
+                "#ed2938",
+                "#2e3087",
+                "#393939",
+				"#ad218c"
+            ],
+            hoverBackgroundColor: [
+                "#d72533",
+                "#252785",
+                "#3a3737",
+				"#a01e81"
+            ]
+        }]
+},
+    options:  {
+        animation:{
+            animateScale:true
+        }
+    }
+});
+</script>
+</div>
+
+<div class="col-md-5 text-center col-md-offset-2">
+<h3>How many members exit</h3>
+<h4>Full widthdrawl rollouts Nov 2015- Nov 2016 </h4>
+<br/>
+	<canvas id="myChart" width="200" height="200"></canvas>
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["2013", "2014", "2015", "2016"],
+        datasets: [{
+            label: '# of members with full withdrawl roll outs',
+            data: [5000, 5000, 5000, 82317],
+            backgroundColor: [
+               
+                'rgba(237, 41, 56, 0.5)',
+                'rgba(173, 33, 140, 0.5)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(46, 48, 135, 0.5)'
+            ],
+            borderColor: [
+               
+                'rgba(237, 41, 56, 1)',
+                'rgba(173, 33, 140, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(46, 48, 135, 1)'
+
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+</div>
+
+
+
+</div>
+</div>
+<!-- /.container -->
+</section>
+<!-- ############### Section end ############### -->
+<!-- Portfolio -->
+<section id="sectionLearnMore" class="portfolio grey">
+<div class="container">
+<div class="row">
+<div class="col-lg-10 col-lg-offset-1 text-center">
+<h2>So what</h2>
+<p>We want to help all Australians to have a better retirement. In order to understand the full picture of your customers across various lifecycle events we need to ...</p>
+<p>So let's</p>
+</div>
+<!-- /.col-lg-10 -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container -->
+</section>
+
+
+
+<!-- Section number 1 -->
+<section id="helping" class="portfolio">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<!-- /.row (nested) -->
+<h2>Now what</h2>
+<div class="col-md-4 text-center">
+	Point 1
+	</div>
+	<div class="col-md-4 text-center">
+	Point 2
+	</div>
+	<div class="col-md-4 text-center">
+	Point 3
+	</div>
+</div>
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container -->
+</section>
+<!-- ############### Section end ############### -->
+
+
+<!-- Footer -->
+<footer>
+<div class="col-lg-12  text-center">
+<p>Some footer or disclaimer text can go here</p>
+<br />
+<br />
+</div>
+<a class="btn btn-dark btn-lg" href="#top" id="to-top" style="display: inline;">&uarr;</a>
+</footer>
+<!-- Custom Theme JavaScript -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Funds', '%'],
+          ['Retail Superfunds',     45],
+          ['Industry Superfunds',      34],
+          ['Public Superfunds',  11],
+          ['SMSF', 5],
+          ['Other',    5]
+        ]);
+
+        var options = {
+          title: 'Where members go',
+          pieHole: 0.5,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+<script>
+
+
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+
+    </script>
+<script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
+<!-- make reveal calls last -->
+<script>
+window.sr = ScrollReveal();
+      sr.reveal('#portfolio');
+sr.reveal('#sectionTwo');
+sr.reveal('.callout');
+sr.reveal('#services');
+	sr.reveal('#helping');
+sr.reveal('#sectionLearnMore');
+    </script>
+<!--
+For Scroll reveal
+The MIT License
+
+Copyright 2016 Julian Lloyd
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-->
